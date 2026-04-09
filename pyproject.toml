@@ -2,15 +2,10 @@
 name = "ai-cloud-orchestrator"
 version = "0.1.0"
 description = "AI Cloud Orchestrator using FastAPI"
-authors = [
-    {name = "Chahna Sri G,Bhoomika ks, Bhoomika Nityamrutha"}
-]
+
 dependencies = [
     "fastapi",
     "uvicorn",
     "pydantic"
 ]
 
-[build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
