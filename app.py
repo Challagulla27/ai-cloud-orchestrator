@@ -6,17 +6,21 @@ from server.models import Action
 app = FastAPI()
 env = CloudEnv()
 
+
 @app.get("/")
 def home():
     return {"status": "running"}
+
 
 @app.post("/reset")
 def reset():
     return env.reset()
 
+
 @app.get("/state")
 def state():
     return env.state()
+
 
 @app.post("/step")
 def step(action: Action):
@@ -34,12 +38,6 @@ def step(action: Action):
     }
 
 
-
-
-def main():
-    import uvicorn
-    uvicorn.run("server.app:app", host="0.0.0.0", port=7860)
-
-
 if __name__ == "__main__":
-    main()
+    import uvicorn
+    uvicorn.run("app:app", host="0.0.0.0", port=7860)
